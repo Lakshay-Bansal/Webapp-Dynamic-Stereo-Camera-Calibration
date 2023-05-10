@@ -106,6 +106,7 @@ choice_dataset = st.radio("Would you like to use your dataset", choices_dataset,
                   index=choices_dataset.index(default_choice_dataset))
 
 imagesL, imagesR = [], []    #Image paths
+camera_ip = ["192.168.1.72", "192.168.1.69"]
 
 if choice_dataset == "No":
     datasets = ["Zhang_Dataset", "Dataset_1", "Dataset_2", "Dataset_3", "Dataset_5"]
@@ -126,16 +127,13 @@ if choice_dataset == "No":
         imagesR = [os.path.join(path_right, imgName) for imgName in imagesR_name]
     
     else:
-        imagesL = glob(rf"../{selected_dataset}/image_*_{camera_ip[0]}.jpg")
-        imagesR = glob(rf"../{selected_dataset}/image_*_{camera_ip[1]}.jpg")
+        imagesL = glob(rf"{PWD}\Dataset\{selected_dataset}\image_*_{camera_ip[0]}.jpg")
+        imagesR = glob(rf"{PWD}\Dataset\{selected_dataset}\image_*_{camera_ip[1]}.jpg")
         
 else:
     left, right = st.columns(2)
     path_left = left.text_input("Left camera")
     path_right = right.text_input("Right camera")
-    
-    
-    camera_ip = ["192.168.1.72", "192.168.1.69"]
     
     
     choices = ["Zhang Dataset", "Stereo captured dataset"]
@@ -144,7 +142,7 @@ else:
     choice = st.radio("Select the type of dataset", choices, index=choices.index(default_choice))
     st.text(choice)
         
-    if choice == "Zang Dataset":
+    if choice == "Zhang Dataset":
         imagesL_name = os.listdir(path_left)
         imagesL = [os.path.join(path_left, imgName) for imgName in imagesL_name]
         # st.write(imagesL)
@@ -343,7 +341,7 @@ parameters = \
 # The abs_max < threshold assertion failure in the error message you received 
 # indicates that the maximum change in the parameters has exceeded the specified threshold.
 
-st.write("### Camera parameters by inbuilt calibration (Zang's Method)")
+st.write("### Camera parameters by inbuilt calibration (Zhang's Method)")
 para1, para2, para3 = st.columns(3)
 
 print("\n\nIntrinsic matrix: ")
@@ -406,6 +404,7 @@ RPE = []
 # As there are 25 images I am running the code on 8 to 10 images
 interval = 1
 left_img_idx = list(range(0, N_OK, interval))
+print(left_img_idx)
 
 for view in left_img_idx[1:]:
     print(int(view/interval))
@@ -1177,11 +1176,12 @@ st.dataframe(rpe)
 sum_rpe = np.sum(np.array(rpe['beforeBA']))
 length = len(rpe['beforeBA'])
 print("Average re-projection error before BA: ", sum_rpe / length)
+st.write(f"##Average re-projection error before BA: {sum_rpe / length}")
 
 sum_rpe = np.sum(np.array(rpe['afterBA']))
 length = len(rpe['afterBA'])
 print("Average re-projection error after BA: ", sum_rpe / length)
-
+st.write(f"##Average re-projection error after BA: {sum_rpe / length}")
 
 #%% Projecting points
 
