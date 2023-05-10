@@ -21,9 +21,15 @@
 # Obtain projection matrix for each image of each view. Then using all 2D match of one same feature in all 
 # left and right image and along different view compute the 3D world point of that feature.
 # """
+import os
+
 import sys
-sys.path.append('/home/lakshayb/Desktop/website/Code')
-sys.path.append('/home/lakshayb/Desktop/website/Dataset')
+
+PWD = os.getcwd()
+sys.path.append(rf'{PWD}\..\Code')
+sys.path.append(rf'{PWD}\..\Dataset')
+
+print(sys.path)
 
 import numpy as np
 import pandas as pd
@@ -40,7 +46,7 @@ from random import sample
 import shutil
 from calibUtils import calibrate_fisheye, tprint
 
-import os
+
 import cv2 as cv
 
 from scipy.linalg import svd
@@ -97,7 +103,7 @@ choices_dataset = ["Yes", "No"]
 default_choice_dataset = "No"
 
 choice_dataset = st.radio("Would you like to use your dataset", choices_dataset, 
-                  index=choices_threshold.index(default_choice_dataset))
+                  index=choices_dataset.index(default_choice_dataset))
 
 imagesL, imagesR = [], []    #Image paths
 
@@ -107,8 +113,10 @@ if choice_dataset == "No":
     st.write(f"You selected: {selected_dataset}")
     
     if selected_dataset == "Zhang_Dataset":
-        path_left = rf"../{selected_dataset}/left"
-        path_right = rf"../{selected_dataset}/right"
+        path_left = rf"{PWD}\Dataset\{selected_dataset}\left"
+        path_right = rf"{PWD}\Dataset\{selected_dataset}\right"
+
+        print(path_left)
         
         imagesL_name = os.listdir(path_left)
         imagesL = [os.path.join(path_left, imgName) for imgName in imagesL_name]
@@ -155,13 +163,23 @@ print(imagesL)
 st.write("### Furnish some further information for calibration")
 
 ckbrd, sqsz, dim = st.columns(3)
-CHECKERBOARD = ckbrd.text_input("Checkerboard (Cols-1, Rows-1):").split(',')
-squareSize = sqsz.text_input("Square size (in cm):")
+CHECKERBOARD = ckbrd.text_input("Checkerboard (Cols-1, Rows-1) (Eg. (9,6)):").split(',')
+squareSize = sqsz.text_input("Square size (in cm) (Eg. 5):")
 DIM = dim.text_input("Image dimension (Eg. (640,480)):").split(',')
 
 cal_setting = {"CHECKERBOARD": tuple(CHECKERBOARD), 
                "squareSize": squareSize, 
                "DIM": tuple(DIM) }
+
+# Zhang Default
+# CHECKERBOARD = (9,6)
+# squareSize = 5
+# DIM = (640,480)
+
+# Stereo calibration pattern
+# CHECKERBOARD = (14,9)
+# squareSize = 7
+# DIM = (1920, 1200)
 
 # st.json(cal_setting)
 # for k in cal_setting.values():
@@ -681,6 +699,7 @@ if choice_threshold == "No":
 else:
     threshold = st.text_input("Enter the threshold value for max RPE in a view: ")
     threshold = int(threshold)
+st.write(f"####Value of threshold is {threshold}")
 
 for pos in range(len(projectionMatrices_L_before)):
     
