@@ -26,8 +26,8 @@ import os
 import sys
 
 PWD = os.getcwd()
-sys.path.append(rf'{PWD}\..\Code')
-sys.path.append(rf'{PWD}\..\Dataset')
+sys.path.append(rf'{PWD}/Code')
+sys.path.append(rf'{PWD}/Dataset')
 
 print(sys.path)
 
@@ -114,8 +114,8 @@ if choice_dataset == "No":
     st.write(f"You selected: {selected_dataset}")
     
     if selected_dataset == "Zhang_Dataset":
-        path_left = rf"{PWD}\Dataset\{selected_dataset}\left"
-        path_right = rf"{PWD}\Dataset\{selected_dataset}\right"
+        path_left = rf"{PWD}/Dataset/{selected_dataset}/left"
+        path_right = rf"{PWD}/Dataset/{selected_dataset}/right"
 
         print(path_left)
         
@@ -127,8 +127,8 @@ if choice_dataset == "No":
         imagesR = [os.path.join(path_right, imgName) for imgName in imagesR_name]
     
     else:
-        imagesL = glob(rf"{PWD}\Dataset\{selected_dataset}\image_*_{camera_ip[0]}.jpg")
-        imagesR = glob(rf"{PWD}\Dataset\{selected_dataset}\image_*_{camera_ip[1]}.jpg")
+        imagesL = glob(rf"{PWD}/Dataset/{selected_dataset}/image_*_{camera_ip[0]}.jpg")
+        imagesR = glob(rf"{PWD}/Dataset/{selected_dataset}/image_*_{camera_ip[1]}.jpg")
         
 else:
     left, right = st.columns(2)
@@ -689,7 +689,7 @@ THRESHOLDS = {"Zhang_Dataset": 250,
               "Dataset_1": 500, 
               "Dataset_2": 900, 
               "Dataset_3": 4000, 
-              "Dataset_5": 1500}
+              "Dataset_5": 9000}
 
 threshold = 0
 
