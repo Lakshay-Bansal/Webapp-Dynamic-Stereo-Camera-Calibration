@@ -23,7 +23,7 @@ st.pyplot(fig)
 
 # st.altair_chart(my_chart)
 
-st.image("./../Single Capture Algo.png")
+# st.image("./../Single Capture Algo.png")
 
 st.graphviz_chart("""
                   digraph{
