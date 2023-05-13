@@ -46,11 +46,11 @@ st.write('''Camera Calibration refers to the estimation of intrinsic camera para
         like an estimation of a dimension of an object and its depth as shown in
         Fig. 1.2. ''')
 
-st.image(r'Images\depthBlur.jpg', 
+st.image(r'Images/depthBlur.jpg', 
          caption='''Figure 1.1: Portrait mode. Photo from PSD Stack. "Photoshop’s New Depth Blur Filter."
                 Source: https://www.psdstack.com/photoshop-tutorials/basic/depth-blur-filter''',
                 width=400)
-st.image('Images\App_CamCal.png', 
+st.image('Images/App_CamCal.png', 
          caption='''Figure 1.2: Object dimension detection in an image. Photo from MATLAB tutorial.
          Source: https://in.mathworks.com/help/vision/ug/camera-calibration.html ''',
                 width=500)
@@ -80,7 +80,7 @@ Camera calibration at the consumer end is not feasible due to the requirement
 of buying accurate calibration patterns and thereafter collecting calibration data.
 Hence dynamic camera calibration is an alternate economical and scalable way of
 camera calibration.''')
-st.image('Images\\needDynCalib.jpg', 
+st.image('Images/needDynCalib.jpg', 
          caption='''Figure 1.3: Causes of camera parameter offset (Image credit - [1])''',
                 width=400)
 
