@@ -584,7 +584,8 @@ common_3D_pts_svd = np.array(common_3D_pts_svd).T
 beforeBA_3d, afterBA_3d = st.columns(2) 
 
 fig = plt.figure(figsize=(4,4))
-ax = Axes3D(fig)
+ax = fig.add_subplot(111, projection='3d')
+# ax = Axes3D(fig)
 
 x_ = []
 y_ = []
@@ -1003,7 +1004,8 @@ print("Optimization took {0:.0f} seconds".format(t1 - t0))
 # from mpl_toolkits.mplot3d import Axes3D
 
 fig = plt.figure(figsize=(4,4))
-ax = Axes3D(fig)
+ax = fig.add_subplot(111, projection='3d')
+# ax = Axes3D(fig)
 
 x_temp = []
 y_temp = []
@@ -1248,7 +1250,8 @@ from scipy.linalg import svd
 from mpl_toolkits.mplot3d import Axes3D
 
 fig = plt.figure(figsize=(4,4))
-ax = Axes3D(fig)
+ax = fig.add_subplot(111, projection='3d')
+# ax = Axes3D(fig)
 
 x_ = []
 y_ = []
