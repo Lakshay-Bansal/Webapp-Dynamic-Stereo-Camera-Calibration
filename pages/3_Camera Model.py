@@ -20,7 +20,7 @@ st.title("Camera Model")
 st.write('''To familiarise with the process of calibration start calibrating a
 monocular and stereo camera by using a conventional Tsai algorithm [13].''')
 
-st.image('Images\PinHole_camera.jpg', 
+st.image('Images/PinHole_camera.jpg', 
          caption='''Figure 3.1: Pin hole camera model. 
          Source: https://in.mathworks.com/help/vision/ug/camera-calibration.html ''',
                 width=300)
@@ -42,7 +42,7 @@ to (Xc, Yc, Zc) from the reference frame of camera coordinate system by applying
 rotation and translation to the world point (see Eq. 3.1).
 ''')
 
-st.image('Images\CameraModel_1.jpg', 
+st.image('Images/CameraModel_1.jpg', 
          caption='''Figure 3.2: Image formation of pin hole camera via a perspective transform ''',
                 width=500)
 
