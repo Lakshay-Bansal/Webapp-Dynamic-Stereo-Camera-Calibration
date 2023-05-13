@@ -15,7 +15,7 @@ This algorithm is performed on the checkerboard pattern.
 The sequential steps involved in stereo capture multi-view camera calibration are depicted in Figure 4.1.
 ''')
 
-st.image('Images\SCMVCC.png', 
+st.image('Images/SCMVCC.png', 
          caption='''Figure 4.1: Steps of stereo capture multi-view camera calibration. ''',
                 width=500)
 
@@ -33,7 +33,7 @@ This is a dynamic camera calibration performed with images of dynamic outdoor la
 single capture algorithm to calibrate the camera. The steps involved in the algorithm are shown in Fig. 4.2. 
 ''')
 
-st.image('Images\singleCaptureAlgoSteps.jpg', 
+st.image('Images/singleCaptureAlgoSteps.jpg', 
          caption='''Figure 4.2: Flowchart of single capture dynamic calibration algorithm. ''',
                 width=500)
 
@@ -62,6 +62,6 @@ dynamic calibration parameters need to be estimated. The pool of N candidate
 image frame sets is denoted as Ii∈{1,...,N}.
 ''')
 
-st.image('Images\\flowchart_MultiCapt_Algo.jpg', 
+st.image('Images/flowchart_MultiCapt_Algo.jpg', 
          caption='''Figure 4.3: Flowchart of multi-view dynamic stereo camera calibration. ''',
                 width=600)
