@@ -39,7 +39,7 @@ distortion.
 st.write('''
 As shown in Fig. 3.2, the point P (Xw, Yw, Zw) in world coordinate is transformed
 to (Xc, Yc, Zc) from the reference frame of camera coordinate system by applying
-rotation and translation to the world point (see Eq. 3.1).
+rotation and translation to the world point (see Eq. 1).
 ''')
 
 st.image('Images/CameraModel_1.jpg', 
@@ -85,7 +85,7 @@ st.latex(r'''
         Z_c
     \end{bmatrix},
 \end{equation} ''')
-st.write("where $\\mathbf{T}$ is intrinsic matrix.")
+st.write("where $\\mathbf{K}$ is intrinsic matrix.")
 
 st.latex(r'''
 \begin{equation}
@@ -94,13 +94,20 @@ st.latex(r'''
         \alpha f & 0 & o_x \\
         0 & \beta f & o_y \\
         0 & 0 & 1
-    \end{bmatrix}
+    \end{bmatrix},
 \end{equation}
 ''')
-st.write("Hence they will be mapped to the image plane in homogeneous coordinate form.")
+st.write('''where $\alpha$ and $\beta$ are scale factor. For square pixels  $\alpha$ and $\beta$ are equal to 1.
+         Hence they will be mapped to the image plane in homogeneous coordinate form.''')
 
 st.latex(r'''
 \begin{equation}
+   \begin{bmatrix}
+        x'_{im}\\ 
+        y'_{im}\\
+        z'_{im}
+    \end{bmatrix}_{\substack{\text{homogeneous} \\ \text{coord.}}}
+    =
     \begin{bmatrix}
         \alpha f & 0 & o_x \\
         0 & \beta f & o_y \\
@@ -117,11 +124,13 @@ st.latex(r'''
         \beta f Y_c + o_y Z_c \\
         Z_c
     \end{bmatrix}
-    =
-    \begin{bmatrix}
-        x'_{im}\\ 
-        y'_{im}\\
-        z'_{im}
-    \end{bmatrix}_{\substack{\text{homogeneous} \\ \text{coord.}}}
 \end{equation}
 ''')
+
+st.write("x and y in Eq. 2 can be obatined from Eq. 5 as:")
+st.latex(r'''
+\begin{equation}
+x = f\frac{x'_{im}}{z'_{im}} \quad\text{,}\quad y = f\frac{y'_{im}}{z'_{im}}
+\end{equation}
+''')
+
