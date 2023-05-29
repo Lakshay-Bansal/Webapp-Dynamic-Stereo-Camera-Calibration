@@ -53,19 +53,18 @@ st.latex(r'''
      Y_c \\
      Z_c
     \end{bmatrix}
-  =
- **R**
+  = \mathbf{R}
  \begin{bmatrix}
      X_{w}\\
      Y_{w}\\ 
      Z_{w}
  \end{bmatrix}
  +
-  **T**,
+\mathbf{T},
 \end{equation}
 ''')
-st.write("where  **R**, is a $3 X 3$ rotation matrix and  **T** is a $3 X 1$ translation matrix.")
-st.write("Then (Xc, Yc, Zc) is mapped to the image plane after perspective projection as shown in Eq. 3.2:")
+st.write('''where  $\\mathbf{R}$ is a $3 \\times 3$ rotation matrix and  $\\mathbf{T}$ is a $3 \\times 1$ translation matrix. 
+         Then (Xc, Yc, Zc) is mapped to the image plane after perspective projection.''')
 st.latex(r'''
 \begin{equation}
 x = f\frac{X_{c}}{Z_{c}} \quad\mbox{,}\quad y = f\frac{Y_{c}}{Z_{c}}
@@ -78,27 +77,28 @@ st.latex(r'''
         x'_{im}\\ 
         y'_{im}\\
         z'_{im}
-    \end{bmatrix} = K 
+    \end{bmatrix} = \mathbf{K}
     \begin{bmatrix}
         X_{c}\\
         Y_{c}\\
         Z_c
     \end{bmatrix},
 \end{equation}
-where K is intrinsic matrix.
+where $\\mathbf{T}$ is intrinsic matrix.
 
-\begin{equation}\label{eq:3.2.7}
-    \textbf{K} = 
+\begin{equation}
+    \mathbf{K} = 
     \begin{bmatrix}
         \alpha f & 0 & o_x \\
         0 & \beta f & o_y \\
         0 & 0 & 1
     \end{bmatrix}
 \end{equation}
+''')
+st.write("Hence they will be mapped to the image plane in homogeneous coordinate form.")
 
-Hence they will be mapped to the image plane in homogeneous coordinate form.
-
-\begin{equation}\label{eq:3.2.9}
+st.latex(r'''
+\begin{equation}
     \begin{bmatrix}
         \alpha f & 0 & o_x \\
         0 & \beta f & o_y \\
