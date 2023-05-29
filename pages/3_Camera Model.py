@@ -75,9 +75,9 @@ st.write("Which can be written as:")
 st.latex(r'''
 \begin{equation}
      \begin{bmatrix}
-        x'_{im}\\ 
-        y'_{im}\\
-        z'_{im}
+        x_{im}\\ 
+        y_{im}\\
+        z_{im}
     \end{bmatrix} = \mathbf{K}
     \begin{bmatrix}
         X_{c}\\
