@@ -85,7 +85,7 @@ st.latex(r'''
         Z_c
     \end{bmatrix},
 \end{equation} ''')
-st.write("where $\\mathbf{K}$ is intrinsic matrix.")
+st.write("where $\\mathbf{K}$ is intrinsic matrix and sub-script 'im' signifies image plane.")
 
 st.latex(r'''
 \begin{equation}
@@ -97,15 +97,16 @@ st.latex(r'''
     \end{bmatrix},
 \end{equation}
 ''')
-st.write('''where $\alpha$ and $\beta$ are scale factor. For square pixels  $\alpha$ and $\beta$ are equal to 1.
-         Hence they will be mapped to the image plane in homogeneous coordinate form.''')
+st.write('''where $\\alpha$ and $\\beta$ are scale factor. For square pixels  $\\alpha$ and $\\beta$ are equal to 1.
+         Hence (Xc, Yc, Zc) mapped to the ($x_{im}, y_{im}, z_{im}$) in image plane in homogeneous coordinate form by Eq. 3 
+         as shown in expanded form below.''')
 
 st.latex(r'''
 \begin{equation}
    \begin{bmatrix}
-        x'_{im}\\ 
-        y'_{im}\\
-        z'_{im}
+        x_{im}\\ 
+        y_{im}\\
+        z_{im}
     \end{bmatrix}_{\substack{\text{homogeneous} \\ \text{coord.}}}
     =
     \begin{bmatrix}
@@ -130,7 +131,7 @@ st.latex(r'''
 st.write("x and y in Eq. 2 can be obatined from Eq. 5 as:")
 st.latex(r'''
 \begin{equation}
-x = f\frac{x'_{im}}{z'_{im}} \quad\text{,}\quad y = f\frac{y'_{im}}{z'_{im}}
+x = \frac{x_{im}}{z_{im}} \quad\text{,}\quad y = \frac{y_{im}}{z_{im}}
 \end{equation}
 ''')
 
