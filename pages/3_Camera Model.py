@@ -65,9 +65,10 @@ st.latex(r'''
 ''')
 st.write('''where  $\\mathbf{R}$ is a $3 \\times 3$ rotation matrix and  $\\mathbf{T}$ is a $3 \\times 1$ translation matrix. 
          Then (Xc, Yc, Zc) is mapped to the image plane after perspective projection.''')
+
 st.latex(r'''
 \begin{equation}
-x = f\frac{X_{c}}{Z_{c}} \quad\mbox{,}\quad y = f\frac{Y_{c}}{Z_{c}}
+x = f\frac{X_{c}}{Z_{c}} \quad\text{,}\quad y = f\frac{Y_{c}}{Z_{c}}
 \end{equation}
 ''')
 st.write("Which can be written as:")
@@ -83,9 +84,10 @@ st.latex(r'''
         Y_{c}\\
         Z_c
     \end{bmatrix},
-\end{equation}
-where $\\mathbf{T}$ is intrinsic matrix.
+\end{equation} ''')
+st.write("where $\\mathbf{T}$ is intrinsic matrix.")
 
+st.latex(r'''
 \begin{equation}
     \mathbf{K} = 
     \begin{bmatrix}
