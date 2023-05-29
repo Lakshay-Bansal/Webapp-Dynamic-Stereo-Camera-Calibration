@@ -47,8 +47,8 @@ st.image('Images/CameraModel_1.jpg',
                 width=500)
 
 st.latex(r'''
-\begin{equation}\label{eq:3.2.1}
-    \\begin{bmatrix}
+\begin{equation}
+    \begin{bmatrix}
      X_c \\
      Y_c \\
      Z_c
@@ -62,7 +62,7 @@ st.latex(r'''
  \end{bmatrix}
  +
  \textbf{T},
-\end{equation}
+\end{equation} \n
 where \textbf{R}, is a $3 \times 3$ rotation matrix and \textbf{T} is a $3 \times 1$ translation matrix.
 ''')
 
