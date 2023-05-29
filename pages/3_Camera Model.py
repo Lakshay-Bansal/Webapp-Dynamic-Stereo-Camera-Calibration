@@ -46,7 +46,7 @@ st.image('Images/CameraModel_1.jpg',
          caption='''Figure 3.2: Image formation of pin hole camera via a perspective transform ''',
                 width=500)
 
-st.latex('''
+st.latex(r'''
 \\begin{equation}\label{eq:3.2.1}
     \\begin{bmatrix}
      X_c \\
