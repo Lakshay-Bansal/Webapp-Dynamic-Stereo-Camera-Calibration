@@ -52,7 +52,7 @@ st.latex(r'''
      X_c \\
      Y_c \\
      Z_c
- \end{bmatrix}
+    \end{bmatrix}
   =
  \textbf{R}
  \begin{bmatrix}
@@ -62,13 +62,13 @@ st.latex(r'''
  \end{bmatrix}
  +
  \textbf{T},
-\end{equation} \n
+\end{equation} \\
 where \textbf{R}, is a $3 \times 3$ rotation matrix and \textbf{T} is a $3 \times 1$ translation matrix.
 ''')
 
 st.write("Then (Xc, Yc, Zc) is mapped to the image plane after perspective projection as shown in Eq. 3.2:")
 st.latex(r'''
-\begin{equation}\label{eq:3.2.2}
+\begin{equation}
 x = f\frac{X_{c}}{Z_{c}} \quad\mbox{,}\quad y = f\frac{Y_{c}}{Z_{c}}
 \end{equation}
 
